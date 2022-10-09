@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=quickobs
+Comment=A tool to quickly download and run Martin Wimpress' OBS Portable.
+Exec=/usr/bin/quickobs
+Terminal=false
+Type=Application
+Icon=quickobs_512.png
+Categories=Settings;PackageManager;Utility;System;
