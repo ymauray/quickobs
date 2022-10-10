@@ -38,7 +38,6 @@ class InstallDialog extends ConsumerWidget {
                   child: Column(
                     children: [
                       FormBuilderTextField(
-                        autovalidateMode: AutovalidateMode.always,
                         name: 'path',
                         decoration: const InputDecoration(
                           labelText: 'Path (below base directory)',
