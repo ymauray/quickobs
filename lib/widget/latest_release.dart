@@ -14,7 +14,7 @@ class LatestRelease extends ConsumerWidget {
 
     return Row(
       children: [
-        const Text('OBS Portable latest release :'),
+        const Text('OBS Studio Portable latest release :'),
         const SizedBox(width: 16),
         ...systemInfo.when(
           data: (data) => [

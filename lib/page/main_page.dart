@@ -79,7 +79,9 @@ class MainPage extends ConsumerWidget {
                               DataColumn(label: Text('Directory')),
                               DataColumn(label: Text('OBS Version')),
                               DataColumn(label: Text('Ubuntu version')),
-                              DataColumn(label: Text('OBS Portable Release')),
+                              DataColumn(
+                                label: Text('OBS Studio Portable Release'),
+                              ),
                               DataColumn(label: Text('')),
                             ],
                             rows: versions
