@@ -121,6 +121,70 @@ class MainPage extends ConsumerWidget {
                 child: Text(error.toString()),
               ),
             ),
+            FutureBuilder<SharedPreferences>(
+              future: SharedPreferences.getInstance(),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  if (snapshot.data!.getBool('hideInfo') == null) {
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Divider(
+                          height: 32,
+                        ),
+                        ColoredBox(
+                          color: Theme.of(context).colorScheme.primary,
+                          child: Padding(
+                            padding: const EdgeInsets.all(4),
+                            child: Column(
+                              children: [
+                                Text(
+                                  'Note : the first time you install OBS '
+                                  'Studio Portable, you need to run the '
+                                  '"obs-dependencies" script to install the '
+                                  'required dependencies. This only needs to '
+                                  'be done once.',
+                                  style: TextStyle(
+                                    color:
+                                        Theme.of(context).colorScheme.onPrimary,
+                                  ),
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    TextButton(
+                                      onPressed: () {
+                                        SharedPreferences.getInstance()
+                                            .then((pref) {
+                                          pref.setBool('hideInfo', true);
+                                          ref.refresh(installedVersionProvider);
+                                        });
+                                      },
+                                      child: Text(
+                                        'Dismiss',
+                                        style: TextStyle(
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .onPrimary,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    );
+                  } else {
+                    return Container();
+                  }
+                } else {
+                  return Container();
+                }
+              },
+            ),
             const Divider(height: 32),
             const Footer(),
           ],
