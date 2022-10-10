@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quickobs/model/installed_version.dart';
 import 'package:quickobs/provider/installed_versions_provider.dart';
+import 'package:quickobs/widget/save_restore_dialog.dart';
 
 class VersionMenu extends ConsumerWidget {
   const VersionMenu({
@@ -19,17 +20,31 @@ class VersionMenu extends ConsumerWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         PopupMenuButton<int>(
-          onSelected: (value) {
+          onSelected: (value) async {
             switch (value) {
               case 1:
-                Process.start(
+                await Process.start(
                   '${_version.directory.path}/obs-portable',
                   [],
                   mode: ProcessStartMode.detached,
                 );
                 break;
+              case 2:
+                await showDialog<void>(
+                  context: context,
+                  builder: (context) => SaveRestoreDialog(_version, save: true),
+                );
+                break;
+              case 3:
+                await showDialog<void>(
+                  context: context,
+                  barrierDismissible: false,
+                  builder: (context) =>
+                      SaveRestoreDialog(_version, save: false),
+                );
+                break;
               case 4:
-                showDialog(
+                await showDialog<void>(
                   context: context,
                   builder: (context) {
                     final path = _version.directory.path.substring(
@@ -62,6 +77,13 @@ class VersionMenu extends ConsumerWidget {
                   },
                 );
                 break;
+              case 5:
+                await Process.start(
+                  'xdg-open',
+                  [_version.directory.path],
+                  mode: ProcessStartMode.detached,
+                );
+                break;
               default:
                 break;
             }
@@ -74,13 +96,18 @@ class VersionMenu extends ConsumerWidget {
             const PopupMenuDivider(),
             const PopupMenuItem(
               value: 2,
-              child: Text('Upgrade'),
+              child: Text('Save config'),
+            ),
+            const PopupMenuItem(
+              value: 3,
+              child: Text('Restore config'),
             ),
             const PopupMenuDivider(),
             const PopupMenuItem(
-              value: 3,
-              child: Text('Rename'),
+              value: 5,
+              child: Text('Open in file explorer'),
             ),
+            const PopupMenuDivider(),
             const PopupMenuItem(
               value: 4,
               child: Text('Delete'),
