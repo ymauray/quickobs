@@ -1,7 +1,7 @@
 name: quickobs
 description: A new Flutter project.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-version: 0.9.2+1
+version: 0.9.3+1
 
 environment:
   sdk: '>=2.18.2 <3.0.0'
