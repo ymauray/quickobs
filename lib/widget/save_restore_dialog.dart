@@ -37,14 +37,18 @@ class SaveRestoreDialog extends ConsumerWidget {
                   children: [
                     if (_save)
                       const Text(
-                          'Pick a folder to save your config to.\nThe "config" '
-                          'folder of the selected installation will be copied '
-                          'there.'),
+                        'Pick a folder in which to save your configuration.\n'
+                        'The "config" folder of the selected installation '
+                        'will be copied there.',
+                      ),
                     if (!_save)
                       const Text(
-                          'Pick a folder to restore your config from.\nIt must '
-                          'contain a "config" subfolder that will replace the '
-                          '"config" folder of the selected installation.'),
+                        'Pick a folder from which to restore your '
+                        'configuration.\n'
+                        'It must contain a "config" subfolder, which will '
+                        'replace the "config" folder of the selected '
+                        'installation.',
+                      ),
                     const SizedBox(
                       height: 24,
                     ),
