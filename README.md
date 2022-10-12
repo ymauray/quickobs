@@ -1,7 +1,7 @@
 <p align="center">
   <img src="assets/resources/quickobs_256.png" alt="quickobs">
   <br />
-  <tt>quickobs</tt>
+  <tt>QuickOBS</tt>
 </p>
 
 <p align="center">
@@ -28,7 +28,7 @@ $ sudo apt install ./quickobs_xxxxxx.deb
 
 ## Usage
 
-Run `quickobs` from your applications menu. It will check on GitHub the latest release of `OBS Studio Portable`, and present the release number, and a button to install that particular release.
+Run `QuickOBS` from your applications menu. It will check on GitHub the latest release of `OBS Studio Portable`, and present the release number, and a button to install that particular release.
 
 It will also check for any instance of `OBS Studio Portable` present in the root folder specified on the main page.
 

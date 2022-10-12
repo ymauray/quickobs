@@ -29,7 +29,7 @@ class MainPage extends ConsumerWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'quickobs',
+                  'QuickOBS',
                   style: Theme.of(context).textTheme.headlineLarge,
                 ),
               ],

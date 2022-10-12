@@ -1,6 +1,6 @@
 [Desktop Entry]
 Version=1.0
-Name=quickobs
+Name=QuickOBS
 Comment=A tool to quickly download and run Martin Wimpress' OBS Studio Portable.
 Exec=/usr/bin/quickobs
 Terminal=false
