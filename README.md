@@ -10,21 +10,15 @@
   </b>
 </p>
 
-<h2 align="center"></h2>
-<p align="center" style="color: red;"><b>WARNING</b></p>
-<p align="center">
-    <tt>quickobs</tt> is still in its early stage of infancy. There are things that may not work properly. If so, keep calm, and send a pull request ! 
-</p>
-
 ## Introduction
 
-`quickobs` tracks the latest release of [OBS Studio Portable](https://github.com/wimpysworld/obs-studio-portable), Martin Wimpress' own build of OBS Studio. With `quickobs`, it is easy to install the latest release of OBS Studio Portable, run it, rename it, update it, and remove it.
+`QuickOBS` tracks the latest release of [OBS Studio Portable](https://github.com/wimpysworld/obs-studio-portable), Martin Wimpress' own build of OBS Studio. With `QuickOBS`, it is easy to install the latest release of OBS Studio Portable, run it, rename it, update it, and remove it.
 
 ------------------------------------
 
 ## Installation
 
-Once [`deb-get`](https://github.com/wimpysworld/deb-get) supports `quickobs`, you will be able to use [`deborah`](https://github.com/ymauray/deborah) to install it. 
+Once [`deb-get`](https://github.com/wimpysworld/deb-get) supports `QuickOBS`, you will be able to use [`deborah`](https://github.com/ymauray/deborah) to install it. 
 
 In the meantime, download the .deb from the [release](https://github.com/ymauray/quickobs/releases) page, and install it using this command :
 ```sh
